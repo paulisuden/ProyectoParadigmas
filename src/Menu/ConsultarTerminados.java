@@ -1,17 +1,16 @@
 package Menu;
-
 import Entidades.Vino;
 import Interfaces.IConsultarEtapaActual;
-
 import java.util.ArrayList;
 
 /**
- * Clase para mostrar los vinos ya terminados (en la última etapa de elaboración)
+ * Clase para mostrar los vinos ya terminados (en la ultima etapa de elaboracion)
  * @version 1.0, 9/9/2023
+ * @author Paula Martinez, Paulina Suden, Lautaro Larosa
  */
 public class ConsultarTerminados implements IConsultarEtapaActual {
     /**
-     * Implementación del método consultarEtapa para mostrar el atributo estado de un objeto vino
+     * Implementacion del metodo consultarEtapa para mostrar el atributo estado de un objeto vino
      * En este caso se consulta ese atributo para todos los vinos
      * @see Vino
      * @param listaVinos : lista de todos los objetos vinos ingresados por el usuario

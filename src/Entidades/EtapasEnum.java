@@ -1,7 +1,7 @@
 package Entidades;
 
 /**
- * Enumeracion EtapasNum donde cada valor representa las etapas de elaboración del vino
+ * Enumeracion EtapasNum donde cada valor representa las etapas de elaboracion del vino
  * @version 1.0 , 07/09/2023
  * @author Lautaro Larosa
  */
@@ -18,7 +18,7 @@ public enum EtapasEnum {
     Embotellamiento;
 
     /**
-     * Método imprimir etapas que imprime por pantalla las etapas de la elaboración del vino
+     * Metodo imprimir etapas que imprime por pantalla las etapas de la elaboracion del vino
      */
     public static void imprimirEtapas(){
         int cont = 1;

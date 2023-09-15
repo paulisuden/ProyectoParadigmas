@@ -6,15 +6,16 @@ import Interfaces.IConsultarEtapaActual;
 import java.util.ArrayList;
 
 /**
- * Clase para consultar la etapa de elaboración en la que se encuentra un vino
+ * Clase para consultar la etapa de elaboracion en la que se encuentra un vino
  * @version 1.1, 9/9/2023
+ * @author Paula Martinez, Paulina Suden, Lautaro Larosa
  */
 public class ConsultarEtapaActual implements IConsultarEtapaActual {
     //Constructor
     public static void consultarEtapaActual(){}
 
     /**
-     * Método consultarEtapa() para informarle al usuario la etapa actual de elaboración de una uva en específico
+     * Metodo consultarEtapa() para informarle al usuario la etapa actual de elaboracion de una uva en especifico
      * En este caso se consulta ese atributo para todos los vinos
      * @param listaVinos : lista de todos los objetos vinos ingresados por el usuario
      * @see Vino

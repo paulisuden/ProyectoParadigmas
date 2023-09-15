@@ -7,7 +7,12 @@ import Entidades.Bodega;
 /**
  * Clase Menu para mostrarle al usuario
  * @version 1.1, 7/9/2023
- * @author Paula Martinez
+ * @author Paula Martinez, Paulina Suden, Lautaro Larosa
+ * @see CambiarEtapa
+ * @see Caracteristicas
+ * @see ConsultarTerminados
+ * @see IngresarUva
+ * @see ConsultarEtapaActual
  */
 
 public class Menu {
@@ -21,6 +26,7 @@ public class Menu {
         ConsultarTerminados consultarTerminado = new ConsultarTerminados();
         ConsultarEtapaActual consultarE = new ConsultarEtapaActual();
         CambiarEtapa cambiarE = new CambiarEtapa();
+        IngresarUva ingresarUva = new IngresarUva();
         boolean ingresoUva = false;
         Scanner scan = new Scanner(System.in);
         int cont = 1;
@@ -50,7 +56,7 @@ public class Menu {
 
             switch (eleccion) {
                 case 1:
-                    IngresarUva.ingresarUva(cont,vinoSabroso);
+                    ingresarUva.ingresarUva(cont,vinoSabroso);
                     ingresoUva = true; cont++;
                     try {
                         Thread.sleep(2000); // Pausa durante 2 segundos

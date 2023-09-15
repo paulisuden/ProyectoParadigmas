@@ -1,7 +1,5 @@
 package Menu;
-
 import Entidades.Uvas.*;
-
 import java.lang.reflect.Method;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -9,11 +7,12 @@ import java.util.Scanner;
 /**
  * Clase Caracteristicas para indicar las caracteristicas del tipo de uva que elija el usuario
  * @version 1.0, 7/9/2023
- * @author Paula Martinez
+ * @author Paula Martinez, Paulina Suden, Lautaro Larosa
+ * @see Uva
  */
 public class Caracteristicas {
     /**
-     * Método sin retorno que muestra las características de determinado tipo de uva
+     * Metodo sin retorno que muestra las caracteristicas de determinado tipo de uva
      */
     public static void mostrarCaracteristicas(){
         Scanner scan = new Scanner(System.in);

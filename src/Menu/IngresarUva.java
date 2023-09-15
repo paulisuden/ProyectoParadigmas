@@ -1,31 +1,27 @@
 package Menu;
-
-import java.lang.reflect.Method;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import Entidades.EtapasEnum;
 import Entidades.Uvas.*;
 import Entidades.Bodega;
 import Entidades.Vino;
 import Entidades.Uvas.TiposUva;
-import Servicios.BodegaServicios;
+
 
 /**
  * Clase IngresarUva en el cual el usuario ingresa y almacenamos un objeto uva en el objeto vino
  * @version 1.0, 8/9/2023
+ * @see EtapasEnum
+ * @see Uva
+ * @see TiposUva
+ * @see Bodega
+ * @author Paula Martinez, Paulina Suden, Lautaro Larosa
  */
 
 public class IngresarUva {
-    public IngresarUva() {
-    }
-
-    public static void ingresarUva(int cont, Bodega vinoSabroso) {
-        Vino nuevoVino;
+    public IngresarUva() {}
+    public void ingresarUva(int cont, Bodega vinoSabroso) {
         Scanner scan = new Scanner(System.in);
-
         System.out.println("A continuación elija la opción entre 1 y 15 de la uva que desea ingresar:");
         TiposUva.imprimirTipoUva();
 
@@ -57,20 +53,18 @@ public class IngresarUva {
             }
         }
 
-        nuevoVino = new Vino(cont, nuevaUva, opcion);
+        Vino nuevoVino = new Vino(cont, nuevaUva, opcion);
         vinoSabroso.getListaVinos().add(nuevoVino);
         vinoSabroso.mostrarVino();
 
     }
 
-
-
     /**
-     * Método elegirUva en donde creamos el objeto de la uva elegida por el usuario
-     * @param opcion es la opción que eligió previamente el usuario
+     * Metodo elegirUva en donde creamos el objeto de la uva elegida por el usuario
+     * @param opcion es la opcion que eligio previamente el usuario
      * @return retorna finalmente el objeto de la clase correspodiente a esa uva
      */
-    public static Uva elegirUva(int opcion){
+    public Uva elegirUva(int opcion){
         Uva nuevaUva = null;
         TiposUva valor = TiposUva.values()[opcion-1];
         Class<?> claseUva = valor.getClase(); // obtener la clase asociada.
@@ -80,60 +74,5 @@ public class IngresarUva {
             e.printStackTrace();
         }
         return nuevaUva;
-        /*
-        switch (opcion){
-            case 1:
-                Uva nuevaUvaC = new CabernetSauvignon();
-                return nuevaUvaC;
-            case 2:
-                Uva nuevaUvaM = new Merlot();
-                return nuevaUvaM;
-            case 3:
-                Uva nuevaUvaT = new Tempranillo();
-                return nuevaUvaT;
-            case 4:
-                Uva nuevaUvaG = new Granacha();
-                return nuevaUvaG;
-            case 5:
-                Uva nuevaUvaP = new PinotNoir();
-                return nuevaUvaP;
-            case 6:
-                Uva nuevaUvaB = new Bonarda();
-                return nuevaUvaB;
-            case 7:
-                Uva nuevaUvaPG = new PinotGris();
-                return nuevaUvaPG;
-            case 8:
-                Uva nuevaUvaCC= new Chardonnay();
-                return nuevaUvaCC;
-            case 9:
-                Uva nuevaUvaS = new SauvignonBlanc();
-                return nuevaUvaS;
-            case 10:
-                Uva nuevaUvaV = new Verdejo();
-                return nuevaUvaV;
-            case 11:
-                Uva nuevaUvaA = new Albariño();
-                return nuevaUvaA;
-            case 12:
-                Uva nuevaUvaGo = new Godello();
-                return nuevaUvaGo;
-            case 13:
-                Uva nuevaUvaMa = new Malbec();
-                return nuevaUvaMa;
-            case 14:
-                Uva nuevaUvaCa = new CabernetFranc();
-                return nuevaUvaCa;
-            case 15:
-                Uva nuevaUvaMo = new MoscatelAlejandria();
-                return nuevaUvaMo;
-            default:
-                Uva nuevaUvaAA = new Albariño();
-                return nuevaUvaAA;
-
-        }
-
-         */
     }
-
 }

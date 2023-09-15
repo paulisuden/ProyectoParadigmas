@@ -1,11 +1,11 @@
 package Interfaces;
-
 import Entidades.Vino;
-
 import java.util.ArrayList;
 
 /**
- * Clase Interface IConsultarEtapaActual que tiene un método para mostrar el atributo estado de un objeto vino
+ * Clase Interface IConsultarEtapaActual que tiene un metodo para mostrar el atributo estado de un objeto vino
+ * @version 1.3 13/9
+ * @author Paulina Suden
  */
 public interface IConsultarEtapaActual {
     /**

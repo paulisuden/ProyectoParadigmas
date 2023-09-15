@@ -18,7 +18,7 @@ public class Bonarda extends Uva{
     }
 
     /**
-     * Implementación del método abstracto imprimirInformacion
+     * Implementacion del metodo abstracto imprimirInformacion
      */
     @Override
     public void imprimirInformacion() {

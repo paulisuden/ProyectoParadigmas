@@ -1,11 +1,11 @@
 package Entidades;
 import java.util.ArrayList;
-import Entidades.Uvas.Uva;
-import Entidades.Vino;
+
 /**
  * Clase Bodega para guardar los datos ingresados por el usuario
  * @version 1.0, 7/9/2023
  * @author Paulina Suden
+ * @see Vino
  */
 public class Bodega {
     public static ArrayList<Vino> listaVinos;
@@ -18,7 +18,7 @@ public class Bodega {
         this.listaVinos = listaVinos;
     }
     /**
-     * Constructor vacío
+     * Constructor vacio
      */
     public Bodega(){}
     //Getters
@@ -29,7 +29,7 @@ public class Bodega {
 
 
     /**
-     * El método mostrarVino() nos muestra por pantalla todos los vinos ingresados
+     * El metodo mostrarVino() nos muestra por pantalla todos los vinos ingresados
      * Con el id y el nombre de la uva del respectivo vino
      * @version 1.0 , 11/09/2023
      */

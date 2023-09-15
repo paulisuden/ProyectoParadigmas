@@ -1,6 +1,5 @@
 package Menu;
 import Entidades.EtapasEnum;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -9,18 +8,21 @@ import Interfaces.IConsultarEtapaActual;
 
 
 /**
- * Clase para cambiar la etapa de elaboración de un vino
+ * Clase para cambiar la etapa de elaboracion de un vino
  * @version 1.0, 7/9/2023
+ * @author Paula Martinez, Paulina Suden, Lautaro Larosa
  */
 public class CambiarEtapa implements IConsultarEtapaActual {
     //Contructor
     public void cambiarEtapa(){}
 
     /**
-     * Método para actualizar la etapa de elaboración de la uva
+     * Metodo para actualizar la etapa de elaboracion de la uva
      * @version 1.0, 8/9/2023
-     * @author Paulina Suden
+     * @author Paula Martinez, Paulina Suden, Lautaro Larosa
      * @see Vino
+     * @see EtapasEnum
+     * @param listaVinos lista de todos los vinos ingresados
      * */
 
     public void cambiarDeEtapa(ArrayList<Vino> listaVinos) {
@@ -84,7 +86,7 @@ public class CambiarEtapa implements IConsultarEtapaActual {
     }
 
     /**
-     * Implementación del metodo consultarEtapa para mostrar el atributo estado de un objeto vino
+     * Implementacion del metodo consultarEtapa para mostrar el atributo estado de un objeto vino
      * @param listaVinos lista de todos los objetos vinos ingresados por el usuario
      * @param vino objeto vino al que se le va a consultar el estado
      */

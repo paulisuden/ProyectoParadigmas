@@ -1,6 +1,6 @@
 package Entidades.Uvas;
 /**
- * Clase Albariño que hereda de la clase Uva
+ * Clase Albarinio que hereda de la clase Uva
  * @version 1.0 , 07/09/2023
  * @author Lautaro Larosa
  */
@@ -18,7 +18,7 @@ public class Albarinio extends Uva{
     }
 
     /**
-     * Implementación del método abstracto imprimirInformacion
+     * Implementacion del metodo abstracto imprimirInformacion
      */
     @Override
     public void imprimirInformacion() {

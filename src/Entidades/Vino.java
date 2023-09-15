@@ -5,6 +5,7 @@ import Entidades.Uvas.Uva;
  * Clase Vino guarda los detalles de cada vino
  * @version 1.0, 7/9/2023
  * @author Paulina Suden
+ * @see Uva
  */
 public class Vino {
     private final int id;
@@ -14,8 +15,8 @@ public class Vino {
 
     /**
      * @param id identifica el vino
-     * @param uva guarda todas las características de dicho vino
-     * @param etapa guarda la etapa actual de elaboración del vino
+     * @param uva guarda todas las caracteristicas de dicho vino
+     * @param etapa guarda la etapa actual de elaboracion del vino
      */
 
     //Constructor
