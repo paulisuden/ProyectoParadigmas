@@ -2,6 +2,7 @@ package Menu;
 import Entidades.EtapasEnum;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 import Entidades.Vino;
 import Interfaces.IConsultarEtapaActual;
@@ -26,35 +27,41 @@ public class CambiarEtapa implements IConsultarEtapaActual {
      * */
 
     public void cambiarDeEtapa(ArrayList<Vino> listaVinos) {
+        List<Integer> listaIds = new ArrayList<>();
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Ingrese el vino que quiere cambiarle la etapa");
-        int cont = 1;
+        System.out.println("Ingrese el id del vino que quiere cambiarle la etapa");
+        int contador = 0;
         for (Vino vino: listaVinos ){
-            System.out.println(cont +") " +vino.uva.getNombreUva());
-            cont++;
-        }
-
-        boolean vinoElegido = false;
-        int eleccion=0;
-        while (!vinoElegido) {
-            try {
-                eleccion = entrada.nextInt();
-                if (eleccion >= 1 && eleccion <= listaVinos.size()) {
-                    vinoElegido = true;
-                } else {
-                    System.out.println("Debe ingresar un número entre 1 y "+listaVinos.size());
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Por favor, ingrese un número válido.");
-                entrada.nextLine(); // "Limpiar" el búfer de entrada
+            if (vino.getEtapa()<10){
+                contador++;
+                System.out.println("Id del vino: "+vino.getId()+" - " +vino.uva.getNombreUva());
+                listaIds.add(vino.getId());
             }
         }
-        eleccion--;
-        Vino vino = listaVinos.get(eleccion);
-
-        if (vino.getEtapa() == 10) {
-            System.out.println("No hay más etapas posibles, ya terminó la elaboración!");
-        } else {
+        if (contador==0){
+            System.out.println("No hay vinos disponibles para cambiar de etapa");
+        }else{
+            boolean vinoElegido = false;
+            int eleccion=0;
+            while (!vinoElegido) {
+                try {
+                    eleccion = entrada.nextInt();
+                    for (int id : listaIds){
+                        if (eleccion==id){
+                            vinoElegido=true;
+                        }
+                    }
+                    if(!vinoElegido){
+                        System.out.println("Debe ingresar una de las id de los vinos disponibles");
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Por favor, ingrese un número válido.");
+                    entrada.nextLine(); // "Limpiar" el búfer de entrada
+                }
+            }
+            Vino vino = listaVinos.get(eleccion-1);
+            System.out.println("Ha elegido el vino con uva: "+vino.uva.getNombreUva()+" de id: "+vino.getId());
+            System.out.println(" ");
             System.out.println("¿Cuál es la nueva etapa actual? Elija la opción correspondiente:");
             int opcion = 1;
             for (EtapasEnum etapa : EtapasEnum.values()) {
@@ -70,10 +77,8 @@ public class CambiarEtapa implements IConsultarEtapaActual {
                     if (newEtapa > vino.getEtapa() && newEtapa <= 10) {
                         elegida = true;
                         vino.setEtapa(newEtapa);
-                        //ConsultarEtapaActual consultaEtapa = new ConsultarEtapaActual();
                         System.out.println("Excelente!");
                         consultarEtapa(listaVinos,vino);
-                        //ConsultarEtapaActual.consultarEtapa(listaVinos);
                     } else {
                         System.out.println("Por favor, ingrese una etapa válida (opción mayor a " +vino.getEtapa() +" y hasta 10)");
                     }

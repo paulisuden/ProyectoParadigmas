@@ -9,7 +9,6 @@ import Entidades.Uvas.Uva;
  */
 public class Vino {
     private final int id;
-
     public Uva uva;
     private int etapa;
 
@@ -18,26 +17,34 @@ public class Vino {
      * @param uva guarda todas las caracteristicas de dicho vino
      * @param etapa guarda la etapa actual de elaboracion del vino
      */
-
-    //Constructor
     public Vino(int id, Uva uva, int etapa) {
         this.id = id;
         this.uva = uva;
         this.etapa = etapa;
     }
 
-    //Get y Set de etapa
+    /**
+     * Getter de Etapa
+     * @return etapa
+     */
     public int getEtapa() {
         return etapa;
     }
 
+    /**
+     * Setter de etapa
+     * @param etapa guarda la etapa actual de elaboracion del vino
+     */
     public void setEtapa(int etapa) {
         this.etapa = etapa;
     }
 
+    /**
+     * Getter de Id
+     * @return id
+     */
     public int getId() {
         return id;
     }
 
-    //public void setId(int id) {this.id = id;}
 }

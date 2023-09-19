@@ -1,8 +1,7 @@
-import java.util.ArrayList;
+
 import java.util.Scanner;
-import Entidades.Vino;
 import Menu.Menu;
-import Entidades.Bodega;
+
 
 
 /**
@@ -21,8 +20,6 @@ public class Main {
         scan.nextLine();
         // ---------- Menú ----------
         Menu menu = new Menu();
-        ArrayList<Vino> listaVino = new ArrayList<Vino>();
-        Bodega vinoSabroso = new Bodega(listaVino);
-        menu.mostrarMenu(vinoSabroso);
+        menu.mostrarMenu();
     }
 }

@@ -17,39 +17,24 @@ public abstract class Uva{
     protected String sabor;
     protected String maridaje;
 
+    /**
+     * Getter de NombreUva
+     * @return nombreUva
+     */
     public String getNombreUva() {return nombreUva;}
-    public String getTipoUva() {return tipoUva;}
-    public String getAparienciaVisual() {
-        return aparienciaVisual;
-    }
-    public String getAroma() {
-        return aroma;
-    }
-    public String getIntensidad() {
-        return intensidad;
-    }
-    public String getCuerpo() {
-        return cuerpo;
-    }
-    public String getSabor() {
-        return sabor;
-    }
-    public String getMaridaje() {
-        return maridaje;
-    }
-    public TiposUva getEnumUva(){ return enumUva;}
+
 
     /**
-     * Metodo polimorifco sin parametros ni return en donde imprimimos las caracteristicas de la uva
+     * Metodo polimorfico sin parametros ni return en donde imprimimos las caracteristicas de la uva
      */
     public void imprimirInformacion(){
-        System.out.println("1-Tipo de Uva: "+getTipoUva());
-        System.out.println("2-Apariencia Visual: " +getAparienciaVisual());
-        System.out.println("3-Aroma: "+getAroma());
-        System.out.println("4-Intensidad: "+getIntensidad());
-        System.out.println("5-Cuerpo: "+getCuerpo());
-        System.out.println("6-Sabor: "+getSabor());
-        System.out.println("7-Maridaje: "+getMaridaje());
+        System.out.println("1-Tipo de Uva: "+tipoUva);
+        System.out.println("2-Apariencia Visual: " +aparienciaVisual);
+        System.out.println("3-Aroma: "+aroma);
+        System.out.println("4-Intensidad: "+intensidad);
+        System.out.println("5-Cuerpo: "+cuerpo);
+        System.out.println("6-Sabor: "+sabor);
+        System.out.println("7-Maridaje: "+maridaje);
     }
 
 }

@@ -3,7 +3,7 @@ package Entidades.Uvas;
 /**
  * Enumeracion TiposUva en donde representa los 15 tipos de uva que puede seleccionar el usuario
  * @version 1.3, 07/09/2023
- * @author Lautaro
+ * @author Lautaro Larosa
  */
 
 public enum TiposUva {

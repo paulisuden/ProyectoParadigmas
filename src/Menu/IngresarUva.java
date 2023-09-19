@@ -20,7 +20,11 @@ import Entidades.Uvas.TiposUva;
 
 public class IngresarUva {
     public IngresarUva() {}
-    public void ingresarUva(int cont, Bodega vinoSabroso) {
+
+    /**
+     * @param contadorVino sirve para colocarle una id al vino creado
+     */
+    public void ingresarUva(int contadorVino) {
         Scanner scan = new Scanner(System.in);
         System.out.println("A continuación elija la opción entre 1 y 15 de la uva que desea ingresar:");
         TiposUva.imprimirTipoUva();
@@ -31,11 +35,16 @@ public class IngresarUva {
             try {
                 opcion = scan.nextInt();
                 entradaValida = opcion >= 1 && opcion <= 15;
+                if (!entradaValida){
+                    System.out.println("Por favor, ingrese un número entre 1 y 15.");
+                }
             } catch (InputMismatchException e) {
-                System.out.println("Por favor, ingrese un número entre 1 y 15.");
+                System.out.println("Ingrese un caracter válido (número entre 1 y 15).");
                 scan.nextLine(); // "Limpiar" el búfer de entrada
             }
+
         }
+
         Uva nuevaUva = elegirUva(opcion);
         System.out.println("");
         System.out.println("Ahora ingrese la etapa entre 1 y 10 en la cual quiere que este su uva: ");
@@ -46,16 +55,20 @@ public class IngresarUva {
             try {
                 opcion = scan.nextInt();
                 entradaValida = opcion >= 1 && opcion <= 10;
-
+                if (!entradaValida){
+                    System.out.println("Por favor, ingrese un número entre 1 y 10.");
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Error,ingrese un número entre 1 y 10.");
                 scan.nextLine();
             }
         }
 
-        Vino nuevoVino = new Vino(cont, nuevaUva, opcion);
-        vinoSabroso.getListaVinos().add(nuevoVino);
-        vinoSabroso.mostrarVino();
+        Vino nuevoVino = new Vino(contadorVino, nuevaUva, opcion);
+        Bodega.listaVinos.add(nuevoVino);
+        Bodega.mostrarVino();
+        //vinoSabroso.getListaVinos().add(nuevoVino);
+        //vinoSabroso.mostrarVino();
 
     }
 

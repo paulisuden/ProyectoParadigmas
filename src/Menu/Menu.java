@@ -20,18 +20,19 @@ public class Menu {
     }
 
     /**
-     * @param vinoSabroso bodega actual
+     * Muestra el menu principal al usuario
      */
-    public void mostrarMenu(Bodega vinoSabroso){
+    public void mostrarMenu(){
         ConsultarTerminados consultarTerminado = new ConsultarTerminados();
         ConsultarEtapaActual consultarE = new ConsultarEtapaActual();
         CambiarEtapa cambiarE = new CambiarEtapa();
         IngresarUva ingresarUva = new IngresarUva();
         boolean ingresoUva = false;
         Scanner scan = new Scanner(System.in);
-        int cont = 1;
-        boolean exit = false; boolean flagMenu = false;int eleccion =0;
+        int contadorVino= 1;
+        boolean exit = false; boolean flagMenu = false;int eleccion = 0;
         while (!exit) {
+            flagMenu=false;
             do{
                 System.out.println(" ");
                 System.out.println("1 - Ingresar un tipo de uva");
@@ -45,7 +46,6 @@ public class Menu {
                     if (eleccion >= 1 && eleccion <= 6) {
                         flagMenu = true;
                     } else {
-                        flagMenu = false;
                         System.out.println("Debe ingresar un número entre 1 y 6.");
                     }
                 } catch (InputMismatchException e) {
@@ -56,8 +56,8 @@ public class Menu {
 
             switch (eleccion) {
                 case 1:
-                    ingresarUva.ingresarUva(cont,vinoSabroso);
-                    ingresoUva = true; cont++;
+                    ingresarUva.ingresarUva(contadorVino);
+                    ingresoUva = true; contadorVino++;
                     try {
                         Thread.sleep(2000); // Pausa durante 2 segundos
                     } catch (InterruptedException e) {
@@ -69,9 +69,9 @@ public class Menu {
                     if (!ingresoUva){
                         System.out.println("Por favor, primero ingrese una uva");
                     } else {
-                        consultarE.consultarEtapa(vinoSabroso.getListaVinos());
+                        consultarE.consultarEtapa(Bodega.listaVinos);
                         try {
-                            Thread.sleep(2000); // Pausa durante 5 segundos
+                            Thread.sleep(2000); // Pausa durante 2 segundos
                         } catch (InterruptedException e) {
                             // Manejar cualquier excepción
                             e.printStackTrace();
@@ -82,7 +82,7 @@ public class Menu {
                     if (!ingresoUva){
                         System.out.println("Por favor, primero ingrese una uva");
                     } else {
-                        cambiarE.cambiarDeEtapa(vinoSabroso.getListaVinos());
+                        cambiarE.cambiarDeEtapa(Bodega.listaVinos);
                         try {
                             Thread.sleep(2000); // Pausa durante 2 segundos
                         } catch (InterruptedException e) {
@@ -94,14 +94,14 @@ public class Menu {
                 case 4:
                     Caracteristicas.mostrarCaracteristicas();
                     try {
-                        Thread.sleep(5000); // Pausa durante 5 segundos para que se vea mas "ordenado"
+                        Thread.sleep(5000); // Pausa durante 5 segundos para que se vea mas "ordenado" y el usuario pueda leer
                     } catch (InterruptedException e) {
                         // Manejar cualquier excepción
                         e.printStackTrace();
                     }
                     break;
                 case 5:
-                    consultarTerminado.consultarEtapa(vinoSabroso.getListaVinos());
+                    consultarTerminado.consultarEtapa(Bodega.listaVinos);
                     try {
                         Thread.sleep(2000); // Pausa durante 2 segundos
                     } catch (InterruptedException e) {
@@ -112,6 +112,12 @@ public class Menu {
                 case 6:
                     System.out.println("Gracias por usar Vino Sabroso. ¡¡Vuelva Pronto!!");
                     exit = true;
+                    try {
+                        Thread.sleep(2000); // Pausa durante 2 segundos
+                    } catch (InterruptedException e) {
+                        // Manejar cualquier excepción
+                        e.printStackTrace();
+                    }
                     break;
                 default:
                     System.out.println("Ingrese una opción válida, por favor");

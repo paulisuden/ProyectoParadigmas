@@ -8,24 +8,7 @@ import java.util.ArrayList;
  * @see Vino
  */
 public class Bodega {
-    public static ArrayList<Vino> listaVinos;
-
-    /**
-     * @param listaVinos guarda todos los objetos Vinos ingresados por el usuario
-     */
-    //Constructor
-    public Bodega(ArrayList<Vino> listaVinos) {
-        this.listaVinos = listaVinos;
-    }
-    /**
-     * Constructor vacio
-     */
-    public Bodega(){}
-    //Getters
-    public ArrayList<Vino> getListaVinos(){return listaVinos;}
-    public static void agregarVino(Vino nuevoVino){
-        listaVinos.add(nuevoVino);
-    }
+    public static ArrayList<Vino> listaVinos = new ArrayList<>();
 
 
     /**
@@ -33,7 +16,7 @@ public class Bodega {
      * Con el id y el nombre de la uva del respectivo vino
      * @version 1.0 , 11/09/2023
      */
-    public static void mostrarVino(){ //Hacer mas bonito
+    public static void mostrarVino(){
         System.out.println("Vinos ingresados: ");
         for (Vino vino :listaVinos){
             System.out.println("Id: "+vino.getId()+", nombre: "+vino.uva.getNombreUva());
